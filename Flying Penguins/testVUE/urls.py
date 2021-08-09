@@ -18,11 +18,11 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
-#from vue_app import views as vue_views
+from vue_app import views as vue_views
 
 urlpatterns = [
-    #path('polls/', include('polls.urls')),
+    path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-    #path('test', vue_views.test_vue),
+    path('test', vue_views.test_vue),
     path('', include('vue_app.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
