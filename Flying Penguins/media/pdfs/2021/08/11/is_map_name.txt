@@ -1,0 +1,40 @@
+lighting=day?mutators=ISMCarmory,ISMCarmory_legacy,ISMCVehicles,ISMCDeployables
+
+Bab
+Crossing (Canyon)
+Farmhouse
+Hideout (Town)
+Hillside (Sinjar)
+Ministry
+Outskirts (Compound)
+Power Plant (PowerPlant)
+Precinct
+Refinery (Oilfield)
+Summit (Mountain)
+TELL
+Tideway (Buhriz)
+
+CompoundCity_Landscape?Scenario=Scenario_CompoundCity_Checkpoint_Security?
+TORO?Scenario=Scenario_TORO_Checkpoint_Security
+Prison?Scenario=Scenario_Prison_Checkpoint_Security?
+Highlands?Scenario=Scenario_Highlands_Checkpoint_Security?
+
+Compound Assault 	MountainPass?Scenario=Scenario_MountainPass_Checkpoint
+Bunker Assault		Scenario_MountainPass_Checkpoint_2
+Bunker			Scenario_MountainPass_Checkpoint_3
+Sweep and Clear		Scenario_MountainPass_Checkpoint_4
+Battle in the woods	Scenario_MountainPass_Checkpoint_5
+Bunker Assault 2	Scenario_MountainPass_Checkpoint_6
+East Village Assault	Scenario_MountainPass_Checkpoint_7
+Bunker 2	?	Scenario_MountainPass_Checkpoint_8
+Mounted Patrol	?	Scenario_MountainPass_Checkpoint_9
+Insurgency	Medium	Scenario_MountainPass_INS
+Counter Assault	Medium	Scenario_MountainPass_INS_2
+
+Sheds?Scenario=Scenario_Sheds_Checkpoint_Security
+Sheds?Scenario=Scenario_Sheds_Checkpoint_Security2
+Sheds?Scenario=Scenario_Sheds_Checkpoint_Insurgents
+
+Safehouse?Scenario=Scenario_Safehouse_Checkpoint_Security?
+Diplomacy?Scenario=Scenario_Diplomacy_Checkpoint_Security
+der_Riese?Scenario=Scenario_der_Riese_CP_Sec
