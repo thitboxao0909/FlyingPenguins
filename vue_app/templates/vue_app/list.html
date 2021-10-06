@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PDF Table data Extraction</title>
+    </head>
+<link rel="stylesheet" href="./style/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand p-1" href="#">PDF Report Extractor</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container-sm d-flex justify-content-center" style="padding-top: 25px">
+        <div class="border d-flex justify-content-center">
+            <div class="d-flex flex-column col-11">
+                <h4 class="p-3 d-flex justify-content-center">Online PDF Extractor</h4>
+                <span class="inner-border p-2">
+                    <div class="d-flex justify-content-center" style="padding-top:30px" >Drop your PDF report includes your data tables need to be extracted</div>
+                    <div class="d-flex justify-content-center p-4">
+                        <form action="{% url "my-view" %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <p>{{ form.non_field_errors }}</p>
+                            <img src="https://scontent.fmel5-1.fna.fbcdn.net/v/t1.15752-9/231445494_2929521513965666_8102626689672318199_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=gpBa7_5r3moAX-fescj&_nc_ht=scontent.fmel5-1.fna&oh=79a9f22af33f728f5ca135386dc188c0&oe=6165AA2A" style="width:400px; height: 100px;" alt="">
+                          
+
+                            <p>
+                                {{ form.docfile.errors }}
+                                {{ form.docfile }}
+                            </p>
+
+                           
+                        </form>
+                    </div>
+                    <div class="d-flex justify-content-center text-decoration-underline">Or drop file here</div>
+                </span>
+                
+                <p class="d-flex p-3 justify-content-center"><input type="submit" value="Upload" class ="btn btn-secondary" style="padding-top: 3px;"/></p>       
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer d-flex justify-content-center" style="padding-top: 10px;">
+        <p class="p-3 d-flex d-block">How to convert files with Online Table Extractor</p>
+    </div>
+    <footer class="d-flex justify-content-center">
+    <div class="d-flex justify-content-around col col-9">
+        <div class="sm-border text-start">Select PDF Report that you wish to extract tables.</div>
+        <div class="sm-border">Our PDF extractor will extract financial related tables in seconds.</div>
+        <div class="sm-border">Your document will be ready to download immediately. Remaining files uploaded will be purged from our server.</div>
+    </div>
+  </footer>
+    <!-- List of uploaded documents -->
+        {% if documents %}
+            All documents in the database:
+            <ul>
+                {% for document in documents %}
+                    <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
+
+        <!-- Upload form. Note enctype attribute! -->
+        
+</body>
+<style>
+  .border{
+    border-style: solid;
+    width: 66%; height: 450px; border-radius:25px;
+    border-width: 3px;
+    border-color: black;
+    background-color: #ffced6;
+}
+.inner-border{
+    border-style: outset;
+    width: 100%;
+    height: 360px;
+    border-radius: 25px;
+    padding-bottom: 50px;
+}
+.sm-border{
+    border-style: none;
+    width: 242px;
+    height: 120px;
+    background-color: #ffced6;
+    border-radius: 15px;
+}
+
+nav{
+    background-color: #ffced6;
+}
+
+</style>
+</html>
