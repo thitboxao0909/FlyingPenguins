@@ -22,6 +22,7 @@ from vue_app import views as vue_views
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
+    path('extract/', include('extract.urls')),
     path('admin/', admin.site.urls),
     path('test', vue_views.test_vue),
     path('', include('vue_app.urls')),
