@@ -2,7 +2,10 @@ from django.shortcuts import redirect, render
 from .models import Document
 from .forms import DocumentForm
 import os
-
+import zipfile
+import io
+from django.conf import settings
+from django.http import HttpResponse, Http404
 
 def test_vue(request):
     return render(request, 'vue_app/test.html')
@@ -92,3 +95,33 @@ def my_view(request):
     # Render list page with the documents and the form
     context = {'documents': documents, 'form': form, 'message': message}
     return render(request, 'list.html', context)
+
+def getfiles(request):
+
+    #fix
+    filenames = ["/tmp/file1.csv", "/tmp/file2.csv"]
+
+    zip_subdir = "csvoutputs"
+    zip_filename = "%s.zip" % zip_subdir
+
+    # Open StringIO to grab in-memory ZIP contents
+    s = io.StringIO.StringIO()
+
+    # The zip compressor
+    zf = zipfile.ZipFile(s, "w")
+
+    for fpath in filenames:
+        # Calculate path for file in zip
+        fdir, fname = os.path.split(fpath)
+        zip_path = os.path.join(zip_subdir, fname)
+
+        # Add file, at correct path
+        zf.write(fpath, zip_path)
+
+    zf.close()
+
+    # Grab ZIP file from in-memory, make response with correct MIME-type
+    resp = HttpResponse(s.getvalue(), content_type = "application/csvzip")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+
+    return resp

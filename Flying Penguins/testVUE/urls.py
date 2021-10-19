@@ -27,3 +27,4 @@ urlpatterns = [
     path('test', vue_views.test_vue),
     path('', include('vue_app.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
