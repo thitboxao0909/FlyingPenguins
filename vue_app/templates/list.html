@@ -20,7 +20,7 @@
                         <form action="{% url "my-view" %}" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <p>{{ form.non_field_errors }}</p>
-                            <img src="https://scontent.fmel5-1.fna.fbcdn.net/v/t1.15752-9/231445494_2929521513965666_8102626689672318199_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=gpBa7_5r3moAX-fescj&_nc_ht=scontent.fmel5-1.fna&oh=79a9f22af33f728f5ca135386dc188c0&oe=6165AA2A" style="width:400px; height: 100px;" alt="">
+                            <!-- <img src="https://scontent.fmel5-1.fna.fbcdn.net/v/t1.15752-9/231445494_2929521513965666_8102626689672318199_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=gpBa7_5r3moAX-fescj&_nc_ht=scontent.fmel5-1.fna&oh=79a9f22af33f728f5ca135386dc188c0&oe=6165AA2A" style="width:400px; height: 100px;" alt=""> -->
                           
 
                             <p>
@@ -50,7 +50,7 @@
     </div>
   </footer>
     <!-- List of uploaded documents -->
-        {% if documents %}
+        <!-- {% if documents %}
             All documents in the database:
             <ul>
                 {% for document in documents %}
@@ -59,7 +59,7 @@
             </ul>
         {% else %}
             <p>No documents.</p>
-        {% endif %}
+        {% endif %} -->
 
         <!-- Upload form. Note enctype attribute! -->
         
