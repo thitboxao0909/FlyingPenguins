@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.showHTML, name='showHTML'),
     # path('download/', views.getfiles, name='download'),
     path('extracted/', views.extracted, name='extracted'),
+    path('show/', views.show, name='show'),
 
 ]

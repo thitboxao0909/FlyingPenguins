@@ -32,8 +32,13 @@ def extracted(self, *args, **kwargs):
 
     extracte.run(run_path, pdf_path)
     os.chdir(home_path)
-    return HttpResponse("done")
+    # return HttpResponse("done")
+    return redirect('show')
     # return render(self, 'result.html')
+
+
+def show(request):
+    return render(request, 'output.html')
 
 
 def getfiles(request):

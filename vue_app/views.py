@@ -92,3 +92,7 @@ def my_view(request):
     # Render list page with the documents and the form
     context = {'documents': documents, 'form': form, 'message': message}
     return render(request, 'list.html', context)
+
+
+def loading(request):
+    return render(request, 'loading.html')
